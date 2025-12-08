@@ -1,7 +1,8 @@
 i=0
-while [ $i -le 4 ]; 
-do 
-    if [ $(kubectl get po -A | grep wordpress | awk '{print $4}') != 'Running' ]; 
+while [ $i -le 4 ];
+do
+    STATE=`kubectl get po -A | grep wordpress | awk '{print $4}'`
+    if [ $STATE != 'Running' ]; 
     then 
         i=$(i + 1) && echo "Iteration $i" && sleep 10s && continue; 
     else 
