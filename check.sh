@@ -1,6 +1,6 @@
 set -xe
 i=0
-while [ $i -le 4 ];
+while [ $i -le 20 ];
 do
     STATE=`kubectl get po -A | grep wordpress | awk '{print $4}'`
     if [ $STATE != 'Running' ]; 
