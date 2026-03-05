@@ -10,6 +10,6 @@ spec:
         path: /
         backend:
           service:
-            name: fwordpress
+            name: wordpress
             port:
               number: 80
