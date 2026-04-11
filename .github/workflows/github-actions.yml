@@ -5,5 +5,5 @@ jobs:
   deploy:
     runs-on: self-hosted
     steps:
-      #- run: helm upgrade --install --namespace default wordpress ./wordpress --set tag=
-      - run: echo "test depoy"
+      - run: helm upgrade --install --namespace default wordpress ./wordpress --set tag=v0.0.10
+      - run: chmod +x check.sh && ./check.sh
