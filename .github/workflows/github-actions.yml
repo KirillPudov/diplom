@@ -7,6 +7,6 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
-      - run: helm upgrade --install --namespace default wordpress ./wordpress --set tag=v0.0.10
+          ref: 'main'
+      - run: helm upgrade --install --namespace default wordpress ./wordpress --set tag=v0.0.11
       - run: chmod +x check.sh && ./check.sh
